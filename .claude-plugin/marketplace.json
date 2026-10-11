@@ -1,0 +1,17 @@
+{
+  "name": "living-blue",
+  "owner": {
+    "name": "Living Blue site developer"
+  },
+  "metadata": {
+    "description": "Claude skills for running the Living Blue community website (Ghost)."
+  },
+  "plugins": [
+    {
+      "name": "living-blue",
+      "source": "./plugins/living-blue",
+      "description": "Help running the Living Blue website: answer how-to questions, draft events and newsletters, suggest design changes, and check the site for problems.",
+      "category": "productivity"
+    }
+  ]
+}

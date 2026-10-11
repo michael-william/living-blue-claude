@@ -1,0 +1,10 @@
+{
+  "name": "living-blue",
+  "version": "0.1.0",
+  "description": "Help running the Living Blue website on Ghost: how-to answers, event and newsletter drafts, design suggestions, and site checkups. Works with the Living Blue connector.",
+  "author": {
+    "name": "Living Blue site developer"
+  },
+  "license": "MIT",
+  "keywords": ["ghost", "newsletter", "events", "community"]
+}

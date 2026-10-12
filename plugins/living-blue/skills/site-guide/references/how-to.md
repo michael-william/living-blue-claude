@@ -7,35 +7,31 @@ search box.**
 
 ## Events
 
-**Add an event**
-1. **Posts → New post**.
-2. Title = the event name ("Monthly meeting").
-3. Write the details in the body: what, who it's for, what to bring.
-4. Open **post settings** (the panel icon, top right).
-5. **Tags**: add `#event` (with the `#`; it's a hidden tag visitors don't see).
-6. **Excerpt**: date, time and place, e.g.
-   `Tue, Nov 17, 2026 · 7:00 PM · Main Library, Room B`.
-7. Optional: **feature image** at the top of the post.
-8. **Publish → Publish** (choose "Publish only" unless she wants to email it).
+Events are managed on the website itself, not in Ghost Admin. You need to be
+signed in to the site as a member with the **Organizer** label.
 
-Date formats the site understands: `Nov 17, 2026`, `November 17 2026`,
-`2026-11-17`, `11/17/2026`. Times: `7 PM`, `7:00 pm`, `7 p.m.`. Text like
-"next Tuesday" can't be read.
+**Make someone an organizer** (including yourself): Ghost Admin → **Members** →
+open the person (add yourself as a member first if needed) → **Labels** → type
+`Organizer` → **Save**.
 
-**Change an event's date**: open the post, post settings → **Excerpt**, edit,
-**Update**.
+**Add an event**: on the site, **Events → Manage events** (or go to
+`/events/manage/`). Fill in the title, date, times, place and details, choose
+**Published** (or **Draft** to finish later) and click **Add event**.
 
-**Cancel an event**: either unpublish it (post settings → Unpublish) or change
-the title to "CANCELLED: …" and explain in the body. Deleting is also possible
-(post settings → Delete post) but can't be undone.
+**Change or cancel an event**: on **Manage events**, click **Edit**, or
+**Cancel event**. A cancelled event stays on the list, marked cancelled, so
+people who signed up see it. **Delete** only appears while nobody has signed up.
 
-An event moves to "Past events" automatically 3 hours after its start time
-(or at the end of the day if no time was given).
+**See who's coming**: on **Manage events**, click the "… people going" line
+under an event. **Email everyone who signed up** opens an email to all of them.
+
+An event moves to "Past events" when it ends (3 hours after the start if no
+end time is given, or at the end of the day for all-day events).
 
 ## Newsletters
 
 **Write and send a newsletter**
-1. **Posts → New post**, write it (no `#event` tag).
+1. **Posts → New post**, write it.
 2. Optional: tag `Newsletter`.
 3. **Send yourself a test first**: **Preview** (top right) → **Email** tab →
    **Send test email**. Check spam if it doesn't arrive.
@@ -66,7 +62,7 @@ instead of the content.
 ## Menus
 
 Settings → search "Navigation".
-- **Primary** = the top menu (Home, Events, Newsletter, About).
+- **Primary** = the top menu (Home, Events, Newsletter). Visitors who aren't signed in don't see it.
 - **Secondary** = the footer menu.
 Signed-in members automatically don't see "Sign up" links.
 

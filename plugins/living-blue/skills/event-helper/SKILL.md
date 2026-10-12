@@ -1,77 +1,75 @@
 ---
 name: event-helper
-description: Draft events for the Living Blue website. Use when the site owner wants to add, announce, or schedule an event ("add the November meeting", "we're doing a potluck on Dec 13 at 5", "put the phone bank on the site"), change a draft event, or check which events are coming up or have a date problem.
+description: Add events to the Living Blue website's members-only calendar. Use when the site owner wants to add, announce, or schedule events ("add the November meeting", "we're doing a potluck on Dec 13 at 5", "here's this month's social calendar"), change a draft event, or check what's coming up and how many people signed up.
 ---
 
 # Event helper
 
-Events on the Living Blue site are posts tagged `#event` whose **excerpt**
-holds the date, time and place. The website parses that excerpt to sort events
-and to show date badges, so getting the format right is the whole job.
+Events on the Living Blue site are **not Ghost posts**. They live in the site's
+own events calendar, which only signed-in members can see at `/events/`.
+Members click **I'm going** (with an optional number of guests), add events to
+their own calendar, or subscribe to the whole calendar.
+
+You add events as **drafts**. An organizer (a member with the **Organizer**
+label in Ghost) reviews and publishes them on the **Manage events** page
+(`/events/manage/`, also linked from the Events page). That's also where
+organizers edit published events, cancel them, and see who's coming.
 
 ## Gather the details
 
-You need: **name**, **date**, **start time** (if any), **place**, and a short
-**description**. Ask only for what's missing, in one question. Useful extras:
-what to bring, who it's for, whether to RSVP, and an image.
+For each event you need: **title**, **date**, and usually a **start time**
+and **place**. Optional: end time, details for members (what to bring, cost,
+contact person), and a limit on places. Ask only for what's missing, in one
+question.
 
-## Check before drafting
+## The monthly calendar document
 
-- **Year**: if she gives no year, use the next upcoming occurrence of that date
-  and say which year you used.
-- **Weekday**: work out the weekday for the date yourself and make sure it
-  matches what she said. If she says "Saturday the 15th" and the 15th is a
-  Sunday, ask which she means. Don't guess.
-- **Past dates**: if the date has already passed, check with her before drafting.
-- **Duplicates**: call `upcoming_events` (and `list_posts` with `kind: events,
-  status: draft` if helpful) to see if this event already exists.
+She may paste or attach the group's monthly social calendar (a Word document
+or PDF). Read every event from it, then:
 
-## The excerpt format
+1. Show her a short table of what you found (date, time, title, place) and ask
+   her to confirm before adding anything. Flag anything unclear.
+2. Call `list_events` with `scope: "all"` and skip events that already exist
+   (same title and date).
+3. Call `create_event` once per event.
 
-Exactly this shape, with ` · ` (space, middle dot, space) between parts:
+## Check before adding
 
-```
-Tue, Nov 17, 2026 · 7:00 PM · Main Library, Room B
-```
-
-- Weekday (3 letters), Month (3 letters) Day, Year
-- Time as `7:00 PM`; leave the time part out entirely if there isn't one
-- Place: short and specific (venue, room, or address)
-
-## Draft it
-
-Call `create_draft` with `kind: "event"`, the title, the excerpt above, and a
-body in simple HTML:
-
-- A friendly opening sentence: what it is and why come
-- Practical details as a short list (what to bring, parking, accessibility,
-  RSVP) — only details she gave you; don't invent any
-- If there's an image link, `upload_image` it first and pass the result as
-  `feature_image`
-
-The connector refuses an event whose excerpt has no readable date; if that
-happens, fix the excerpt and retry.
+- **Year**: if none is given, use the next upcoming occurrence and say which.
+- **Weekday**: work out the weekday yourself. If she says "Saturday the 15th"
+  and the 15th is a Sunday, ask. Don't guess.
+- **Past dates**: check with her first.
+- **Times**: the connector takes 24-hour times in Central time (`18:30` for
+  6:30 PM). Leave `start_time` out for an all-day event.
 
 ## Afterwards
 
-Tell her, in this order:
+Tell her:
 
-1. It's a **draft**: nobody can see it yet.
-2. The link to review it (`edit_in_ghost` from the result).
-3. To make it live: **Publish → Publish only** (or **Publish and email** if she
-   wants members emailed about it). Remind her that emails can't be unsent.
+1. The events are **drafts**: members can't see them yet.
+2. To publish: open `/events/manage/` on the site (signed in as a member with
+   the Organizer label) and click **Publish** on each one.
+3. Once published, members can sign up straight away.
 
 ## Changing events
 
-- **Draft events**: use `update_draft`.
-- **Published events**: the connector can't change them (on purpose). Walk her
-  through it: open the post in Ghost Admin → post settings → **Excerpt** (for
-  date/time/place) or edit the text → **Update**.
-- **Checking for problems**: `upcoming_events` lists any events with
-  unreadable dates under `unreadable_dates`; offer corrected excerpts for those.
+- **Drafts**: `update_event` with the event's id from `list_events`.
+- **Published events** (date change, cancellation): the connector can't change
+  them, on purpose. An organizer uses **Edit** or **Cancel event** on the
+  Manage events page. Cancelling keeps the event visible, marked cancelled, so
+  people who signed up can see it.
+- **Who's coming**: `list_events` gives the number of people signed up per
+  event. Names are only on the Manage events page; the connector never sees them.
+
+## Organizers
+
+Anyone who should manage events needs (1) a member account and (2) the label
+**Organizer** on it: Ghost Admin → **Members** → open the person → **Labels** →
+type `Organizer` → **Save**. The site owner needs this on her own member
+account too (being the Ghost owner isn't enough).
 
 ## Never
 
-Publish, email, or delete — the connector can't, and you shouldn't suggest it
-did. Don't invent details (times, addresses, speakers) she didn't give you;
-leave a clear `[check: …]` placeholder instead and point it out.
+Publish, cancel or delete events: the connector can't, and you shouldn't
+suggest it did. Don't invent details (times, addresses, costs) she didn't give
+you; leave a clear `[check: …]` placeholder in the details and point it out.

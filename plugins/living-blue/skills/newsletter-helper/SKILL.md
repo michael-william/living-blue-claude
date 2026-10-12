@@ -16,7 +16,7 @@ Ask for (only what's missing):
 - Anything to thank people for or announce
 - Whether it's for **everyone** or **members only**
 
-Then call `upcoming_events` so the newsletter can include a "Coming up" section
+Then call `list_events` so the newsletter can include a "Coming up" section
 with real dates and links. Call `list_posts` with `kind: newsletters` to see the
 previous issue's title and tone if helpful.
 
@@ -30,7 +30,7 @@ you soon, the Living Blue steering committee") unless she says otherwise.
 
 1. Greeting and one-paragraph overview
 2. The main news, under short `<h2>` headings
-3. **Coming up**: the next few events from `upcoming_events`, each as a list
+3. **Coming up**: the next few events from `list_events`, each as a list
    item with date and a link to its page
 4. How to help / get involved (only real asks she mentioned)
 5. Sign-off

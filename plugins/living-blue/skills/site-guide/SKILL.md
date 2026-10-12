@@ -24,25 +24,26 @@ kindly, and get her unstuck.
   the search-box route rather than guessing a menu path.
 - Check facts with the **Living Blue connector** when the question is about her
   actual site ("how many members do we have?", "is the November meeting up?"):
-  `site_overview`, `upcoming_events`, `list_posts`, `get_post`.
+  `site_overview`, `list_events`, `list_posts`, `get_post`.
 
 ## How this site is set up (it differs from a standard Ghost site)
 
 Read `references/how-to.md` for step-by-step instructions. The essentials:
 
-- **Events are ordinary posts with the tag `#event`.** The event's date, time
-  and place go in the post's **Excerpt** field, e.g.
-  `Tue, Nov 17, 2026 · 7:00 PM · Main Library, Room B`. The website reads that
-  text to sort events and move them to "Past events" afterwards. If the date
-  can't be read, the event still shows, but without a date badge, at the end
-  of the list. (The `event-helper` skill drafts events in the right format.)
-- **Newsletters** are posts *without* the `#event` tag. Publishing one can also
-  email it to members (Ghost's "Publish and email" option).
-- **Pages:** Home, `/events/` (upcoming then past), `/newsletter/` (all
-  non-event posts), `/about/`.
-- **Members** sign up with the **Join** button (free). Signed-in members can read
-  members-only posts and take part in comments; visitors see a "Get involved"
-  box instead.
+- **The site is members-only.** Visitors see only the homepage: the About
+  page's text (edited under **Pages → About**) and a **Request to join** form.
+  Everything else shows visitors a "For members only" box.
+- **Joining is by approval.** A request from the form is emailed to the site
+  owner. To approve, she adds the person under **Members → New member**; they
+  then sign in with their email address (Ghost emails them a sign-in link).
+- **Events are not posts.** They're in the site's own members-only calendar at
+  `/events/`, where members click **I'm going** and add events to their own
+  calendars. Organizers (members with the **Organizer** label) add, publish,
+  edit and cancel events and see who's coming at `/events/manage/`. (The
+  `event-helper` skill adds draft events.)
+- **Newsletters** are posts. Publishing one can also email it to members
+  (Ghost's "Publish and email" option).
+- **Pages:** Home, `/events/` (upcoming then past), `/newsletter/` (all posts).
 - **Paid membership dues are not set up yet.** They need a Stripe account,
   which the group will decide on later. Say so plainly if she asks.
 - **Email may land in spam for now.** This is a known setup item for the

@@ -19,7 +19,8 @@ What's on each page, and who can change what.
 | Featured posts carousel on the homepage | Design → Customize → Homepage → *Show featured posts* (and mark posts as Featured) |
 | Top menu / footer menu | Settings → Navigation → Primary / Secondary |
 | Footer social icons | Settings → Social accounts |
-| About page text and image | Pages → About |
+| About text (shown to visitors on the homepage) | Pages → About |
+| Events (add, edit, cancel) | on the site: Events → Manage events (organizers) |
 | Any post's feature image, excerpt, title | open the post → post settings |
 
 ## Needs the developer (theme code)

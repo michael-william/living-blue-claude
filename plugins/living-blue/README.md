@@ -11,15 +11,15 @@ In Claude Code:
 | Skill | Use it for |
 |---|---|
 | `site-guide` | How-to questions about this specific site; what it can and can't do |
-| `event-helper` | Drafting events in the site's `#event` + excerpt-date format |
+| `event-helper` | Adding draft events to the members-only calendar, e.g. from the monthly calendar document |
 | `newsletter-helper` | Drafting newsletter issues from notes; explaining how to send |
 | `design-advisor` | Reviewing pages and sorting suggestions into self-serve vs developer |
 | `site-checkup` | A read-only health check that ends in a short to-do list |
 
 ## Connector tools (the "Living Blue" custom connector)
 
-`site_overview`, `list_posts`, `upcoming_events`, `get_post`, `create_draft`,
-`update_draft`, `upload_image`, `newsletter_stats`, `get_page`,
+`site_overview`, `list_posts`, `get_post`, `create_draft`, `update_draft`,
+`list_events`, `create_event`, `update_event`, `upload_image`, `newsletter_stats`, `get_page`,
 `send_to_developer`.
 
 The connector is deliberately limited: it creates and edits **drafts only**,

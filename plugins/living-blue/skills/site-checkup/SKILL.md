@@ -13,9 +13,8 @@ developer.
 ## Run these checks
 
 1. **Overview**: `site_overview`. Note member count and how many drafts exist.
-2. **Events**: `upcoming_events`.
-   - Any under `unreadable_dates`? → needs a fixed excerpt (give the corrected
-     text, e.g. `Tue, Nov 17, 2026 · 7:00 PM · Main Library`).
+2. **Events**: `list_events` (scope `upcoming`).
+   - Any still `draft`? → an organizer should publish them on `/events/manage/`.
    - No upcoming events at all? → the homepage shows "No upcoming events yet";
      suggest adding the next one.
    - Next event more than ~6 weeks away? → mention it.

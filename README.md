@@ -49,9 +49,12 @@ there within seconds. When you're happy, your change goes to your developer
 for review, and the real site updates after they approve it.
 
 This uses the **Code** tab of the Claude app on your computer and a free
-GitHub account. Your developer will help you set it up once; then just ask
-Claude *"Help me set up site editing on my computer"* and it will walk you
-through it.
+GitHub account. To set it up, open the **Code** tab and send:
+
+> *Set me up as a Living Blue site editor by following
+> https://github.com/michael-william/living-blue-claude/blob/main/SETUP-EDITOR.md*
+
+Claude does the rest and tells you what to click.
 
 ## What Claude will and won't do
 

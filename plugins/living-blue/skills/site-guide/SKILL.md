@@ -71,6 +71,13 @@ Write it so someone who wasn't in the chat can act on it: what she was trying
 to do, what happened, exact page address, what she already tried. **Show her
 the message and get her OK before sending.**
 
+## Changing the design
+
+Settings (colours, logo, menus, headline) are in Ghost Admin. Layout and style
+changes that need code she can make herself with Claude Code on the test site;
+see the `site-editor` skill. Bigger changes (how events or sign-ups work) go
+to the developer.
+
 ## Members' privacy
 
 Member lists are real people's personal details. The connector only gives

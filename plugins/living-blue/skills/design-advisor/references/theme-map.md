@@ -23,7 +23,9 @@ What's on each page, and who can change what.
 | Events (add, edit, cancel) | on the site: Events → Manage events (organizers) |
 | Any post's feature image, excerpt, title | open the post → post settings |
 
-## Needs the developer (theme code)
+## Theme code: she can change it with Claude Code (site-editor)
+
+Edited on the test site, then sent to the developer for review.
 
 - Layout of the homepage sections (banner, Upcoming events, Latest newsletters,
   Get involved box), their order, or adding new sections
@@ -33,7 +35,12 @@ What's on each page, and who can change what.
 - The grey Previous/Next band at the bottom of posts
 - How the banner image is displayed (cropping, the dark overlay, text over it)
 - Spacing, font sizes, colours other than the accent colour
-- Anything new: calendars, RSVP, sign-up forms, galleries
+
+## Needs the developer
+
+- How the events calendar, RSVP, printing or sign-up form *work* (their look is
+  theme code)
+- Emails, new add-ons or packages, anything on the server
 
 ## Known open items (already with the developer)
 

@@ -13,14 +13,19 @@ In Claude Code:
 | `site-guide` | How-to questions about this specific site; what it can and can't do |
 | `event-helper` | Adding draft events to the members-only calendar, e.g. from the monthly calendar document |
 | `newsletter-helper` | Drafting newsletter issues from notes; explaining how to send |
-| `design-advisor` | Reviewing pages and sorting suggestions into self-serve vs developer |
+| `design-advisor` | Reviewing pages and sorting suggestions into settings, theme code, or developer |
+| `site-editor` | Editing the theme in Claude Code with live preview on staging, then a PR for review; Windows setup |
 | `site-checkup` | A read-only health check that ends in a short to-do list |
 
 ## Connector tools (the "Living Blue" custom connector)
 
-`site_overview`, `list_posts`, `get_post`, `create_draft`, `update_draft`,
-`list_events`, `create_event`, `update_event`, `upload_image`, `newsletter_stats`, `get_page`,
-`send_to_developer`.
+`site_overview`, `list_posts`, `list_events`, `create_event`, `update_event`,
+`get_post`, `create_draft`, `update_draft`, `upload_image`, `newsletter_stats`,
+`get_page`, `send_to_developer`.
+
+`site-editor` doesn't use the connector: it works in Claude Code inside a clone
+of the private site repo, whose `CLAUDE.md` and hooks hold the procedure and the
+guardrails (see that repo's README, "Live editing on staging").
 
 The connector is deliberately limited: it creates and edits **drafts only**,
 never publishes, sends, or deletes, and exposes member **counts** only. The

@@ -41,6 +41,18 @@ Start a new chat and ask:
 - *"How could the homepage look better?"*
 - *"How do I make a post members-only?"*
 
+## Changing the site's design yourself (optional)
+
+Besides the chat helpers above, you can change the site's layout and style
+yourself: Claude edits the design on a **test site** and you see each change
+there within seconds. When you're happy, your change goes to your developer
+for review, and the real site updates after they approve it.
+
+This uses the **Code** tab of the Claude app on your computer and a free
+GitHub account. Your developer will help you set it up once; then just ask
+Claude *"Help me set up site editing on my computer"* and it will walk you
+through it.
+
 ## What Claude will and won't do
 
 **Will:**
@@ -53,6 +65,8 @@ Start a new chat and ask:
   to you first**
 
 **Won't:**
+- Change the **real** site's design. Design changes happen on the test site,
+  and your developer approves them before they go live.
 - **Publish** anything. You review drafts and click Publish yourself.
 - **Send newsletters.** You click Send in Ghost after a test email.
 - **Delete** anything.

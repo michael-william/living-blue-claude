@@ -11,6 +11,8 @@ type it. Ask her developer for help at any point.
 - Her **dev-sync token**: a long code that lets her computer update the test
   site. Treat it like a password.
 - The **test site password** (staging.livingblueintv.com asks for it).
+- Confirmation that her email address is **allowed on the test site** (the
+  developer adds her as a test-site member so sign-in links reach her inbox).
 
 ## 1. Install Git for Windows
 

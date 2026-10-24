@@ -45,8 +45,9 @@ Words to use with her: "the test site" (staging), "your change" (a branch),
 ## Setting expectations
 
 - The test site has **fake** members, posts and events, and its own password.
-  She signs in there with the test mailbox, not her real email. If she needs
-  to sign in as a member, ask the developer how; don't guess.
+  After the password she signs in as a member with her own email address; the
+  sign-in link arrives in her real inbox (the developer has to allow her
+  address once). If no link arrives, offer to email the developer.
 - Only **one person** can use the test site at a time. If it's busy, say who
   is using it and suggest trying later.
 - Some things **can't be changed here** and need the developer: the events

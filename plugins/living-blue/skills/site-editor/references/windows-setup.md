@@ -74,7 +74,8 @@ From here, Claude runs the commands. In order:
 ## 5. First try
 
 1. Open https://staging.livingblueintv.com in her browser and enter the test
-   site password. Keep that tab open.
+   site password, then **Sign in** with her own email address and click the
+   link that arrives in her inbox. Keep that tab open.
 2. Ask Claude something small, like *"make the 'Upcoming events' heading say
    'What's coming up'"*. Claude starts a change, edits, and tells her to
    refresh. She should see it within a few seconds.
